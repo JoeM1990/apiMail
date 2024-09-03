@@ -24,13 +24,13 @@ export class EmailService {
         });
     }
 
-    async sendMail(to: string, from: string, subject: string, content: string) {
+    async sendMail(data:any) {
 
         await this.mailerService.sendMail({
-            to: to.toString(),
-            from: from.toString(),
-            subject: subject.toString(),
-            text: content.toString()
+            to: data.to,
+            from: data.from,
+            subject: data.subject,
+            text: data.content
             // template: content,
 
         });
