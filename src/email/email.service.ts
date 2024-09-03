@@ -31,21 +31,17 @@ export class EmailService {
             from: data.from,
             subject: data.subject,
             text: data.content
-            // template: content,
-
         });
     }
 
-    async sendMailMultiple(to: any, from: string, subject: string, content: string) {
+    async sendMailMultiple(data:any) {
 
-        for (var i = 1; i <= to.length; i++) {
+        for (var i = 1; i <= data.to.length; i++) {
             await this.mailerService.sendMail({
-                to: to[i],
-                from: from,
-                subject: subject,
-                text: content
-                // template: content,
-
+                to: data.to[i],
+                from: data.from,
+                subject: data.subject,
+                text: data.content
             });
         }
 
