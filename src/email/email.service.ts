@@ -14,7 +14,7 @@ export class EmailService {
 
         await this.mailerService.sendMail({
             to: user.email,
-            // from: '"Support Team" <support@example.com>',
+            from: this.config.get('MAIL_HOST'),
             subject: 'Welcome',
             template: './welcome',
             context: {
