@@ -1,6 +1,6 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
-import { User } from './../user/user.entity';
+import { User } from '../entity/user.entity';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
@@ -24,18 +24,18 @@ export class EmailService {
         });
     }
 
-    async sendMail(data:any) {
+    async sendMail(to: string, from: string, subject: string, content: string) {
 
         await this.mailerService.sendMail({
-            to: data.to,
-            from: data.from,
-            subject: data.subject,
-            template: data.content,
+            to: to,
+            from: from,
+            subject: subject,
+            template: content,
 
         });
     }
 
-    async sendMailMultiple(data:any) {
+    async sendMailMultiple(to: string, from: string, subject: string, content: string) {
 
         for (var i = 1; i <= data.to.length; i++) {
             await this.mailerService.sendMail({

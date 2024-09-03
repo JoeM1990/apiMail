@@ -9,31 +9,31 @@ import { EmailController } from './email.controller';
 
 @Global()
 @Module({
-//   imports: [
-//     MailerModule.forRootAsync({
-//       useFactory: async (config: ConfigService) => ({
-//         transport: {
-//           host: config.get('MAIL_HOST'),
-//           secure: false,
-//           auth: {
-//             user: config.get('SMTP_USERNAME'),
-//             pass: config.get('SMTP_PASSWORD'),
-//           },
-//         },
-//         defaults: {
-//           from: `"Api Mail" <${config.get('SMTP_USERNAME')}>`,
-//         },
-//         template: {
-//           dir: join(__dirname, 'templates'),
-//           adapter: new EjsAdapter(),
-//           options: {
-//             strict: false,
-//           },
-//         },
-//       }),
-//       inject: [ConfigService],
-//     }),
-//   ],
+  imports: [
+    MailerModule.forRootAsync({
+      useFactory: async (config: ConfigService) => ({
+        transport: {
+          host: config.get('MAIL_HOST'),
+          secure: false,
+          auth: {
+            user: config.get('SMTP_USERNAME'),
+            pass: config.get('SMTP_PASSWORD'),
+          },
+        },
+        defaults: {
+          from: `"Api Mail" <${config.get('SMTP_USERNAME')}>`,
+        },
+        template: {
+          dir: join(__dirname, 'templates'),
+          adapter: new EjsAdapter(),
+          options: {
+            strict: false,
+          },
+        },
+      }),
+      inject: [ConfigService],
+    }),
+  ],
   providers: [EmailService],
   exports: [EmailService],
   controllers: [EmailController]
