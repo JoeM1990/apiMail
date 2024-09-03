@@ -24,23 +24,23 @@ export class EmailService {
         });
     }
 
-    async sendMail(to: string, content: string, subject: string) {
+    async sendMail(data:any) {
 
         await this.mailerService.sendMail({
-            to: to,
-            from: this.config.get('MAIL_HOST'),
-            subject: subject,
-            template: content,
+            to: data.to,
+            from: data.from,
+            subject: data.subject,
+            template: data.content,
 
         });
     }
 
-    async sendMailMultiple(to:any, content: string, subject: string) {
+    async sendMailMultiple(to:any, from: string, content: string, subject: string) {
 
         for (var i = 1; i <= to.length; i++) {
             await this.mailerService.sendMail({
                 to: to[i],
-                from: this.config.get('MAIL_HOST'),
+                from: from,
                 subject: subject,
                 template: content,
 
