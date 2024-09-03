@@ -21,7 +21,7 @@ import { EmailController } from './email.controller';
           },
         },
         defaults: {
-          from: `"Api Mail" <${config.get('SMTP_USERNAME')}>`,
+          from: `"Mail App" <${config.get('SMTP_USERNAME')}>`,
         },
         template: {
           dir: join(__dirname, 'templates'),
