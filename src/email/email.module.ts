@@ -20,7 +20,7 @@ import { EmailService } from './email.service';
           },
         },
         defaults: {
-          from: `"Nice App" <${config.get('SMTP_USERNAME')}>`,
+          from: `"Api Mail" <${config.get('SMTP_USERNAME')}>`,
         },
         template: {
           dir: join(__dirname, 'templates'),
