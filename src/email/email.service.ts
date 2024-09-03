@@ -41,8 +41,8 @@ export class EmailService {
             await this.mailerService.sendMail({
                 to: res.to[i],
                 from: res.from,
-                subject: data.subject,
-                text: data.content
+                subject: res.subject,
+                text: res.content
             });
         }
 
