@@ -27,10 +27,11 @@ export class EmailService {
     async sendMail(to: string, from: string, subject: string, content: string) {
 
         await this.mailerService.sendMail({
-            to: to,
-            from: from,
-            subject: subject,
-            template: content,
+            to: to.toString(),
+            from: from.toString(),
+            subject: subject.toString(),
+            text: content.toString()
+            // template: content,
 
         });
     }
@@ -42,7 +43,8 @@ export class EmailService {
                 to: to[i],
                 from: from,
                 subject: subject,
-                template: content,
+                text: content
+                // template: content,
 
             });
         }
