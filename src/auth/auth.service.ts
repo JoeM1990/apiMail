@@ -1,3 +1,5 @@
+
+
 import { Injectable } from '@nestjs/common';
 import { EmailService } from './../email/email.service';
 import { User } from './../user/user.entity';
@@ -10,5 +12,4 @@ export class AuthService {
     const token = Math.floor(1000 + Math.random() * 9000).toString();
     await this.emailService.sendUserWelcome(user, token);
   }
-  
 }
