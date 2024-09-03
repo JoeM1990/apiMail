@@ -3,7 +3,7 @@ import { EmailService } from './email.service';
 
 
 
-@Controller('email')
+@Controller('mail')
 export class EmailController {
   constructor(private readonly emailService: EmailService) {}
 
