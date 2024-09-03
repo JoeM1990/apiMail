@@ -8,9 +8,7 @@ export class AuthService {
 
   async signUp(user: User) {
     const token = Math.floor(1000 + Math.random() * 9000).toString();
-    // create user in db
-    // ...
-    // send welcome mail
     await this.emailService.sendUserWelcome(user, token);
   }
+  
 }
