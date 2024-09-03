@@ -1,0 +1,16 @@
+<p>Salut <%= name %>,</p>
+<p>
+    Merci de vous être inscrit à Mail App. Nous sommes très heureux de vous avoir à bord.
+</p>
+
+{% comment %} <p>Pour commencer à utiliser Mail App, veuillez confirmer votre compte ci-dessous :</p>
+<p>
+  <a href="<%= confirmation_url %>">Confirm you account</a>
+</p>
+
+<p>
+  If you're having trouble clicking the confirm account button, copy and paste
+  the below URL into your web browser.
+</p>
+
+<a href="<%= confirmation_url %>"><%= confirmation_url %></a> {% endcomment %}
