@@ -10,11 +10,11 @@ export class EmailController {
 
   @Post('/single')
   sendMail(@Body() res:Email): Promise<void> {
-    return this.emailService.sendMail(req.body);
+    return this.emailService.sendMail(res.to, res.from, res.subject, res.content);
   }
 
   @Post('/multiple')
   sendMailMultiple(@Body() res:Email): Promise<void> {
-    return this.emailService.sendMail(req.body);
+    return this.emailService.sendMailMultiple(res.to, res.from, res.subject, res.content);
   }
 }
