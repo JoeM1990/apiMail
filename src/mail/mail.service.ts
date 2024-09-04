@@ -17,7 +17,7 @@ export class MailService {
     });
   }
 
-  async sendMail(to: string, subject: string, text: string, from: string) {
+  async sendMail(to: string, from: string, subject: string, text: string, ) {
     const mailOptions = {
       from: from,
       to,
