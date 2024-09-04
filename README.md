@@ -18,13 +18,14 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
 
 ## Commencer
 
-###Installation
+### Installation
 
 1. Clonez le référentiel :
 
    ```bash
    clone git https://github.com/JoeM1990/apiMail.git
    cd apiMail
+
 2. Installez les dépendances :
    npm install
 
@@ -34,6 +35,7 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
   Créez un mot de passe d'application dans votre compte Google.
   Remplacez your-email@gmail.com et your-app-password dans EmailService par vos informations d'identification réelles.
 
+  ```bash
   this.transporter = nodemailer.createTransport({
     service : 'gmail',
     authentification : {
@@ -41,36 +43,34 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
       pass : « votre-mot de passe-de-l'application »,
     },
   });
-Usage
+
+### Usage
 Pour envoyer un e-mail, vous pouvez effectuer une requête POST à ​​http://localhost:3000/email/send avec le corps JSON suivant :
 
-Exemple pour un seul destinataire :
-json
-Copier le code
-{
-  "à": "destinataire@exemple.com",
-  "subject": "E-mail de test",
-  "text": "Ceci est un e-mail test de NestJS !",
-  "fromName": "Mon expéditeur personnalisé"
-}
-Exemple pour plusieurs destinataires :
-Utilisation d'une chaîne séparée par des virgules :
+  Exemple pour un seul destinataire :
 
-json
-Copier le code
-{
-  "à": "utilisateur1@exemple.com,utilisateur2@exemple.com",
-  "subject": "E-mail de test",
-  "text": "Ceci est un email test envoyé à plusieurs destinataires !",
-  "fromName": "Mon expéditeur personnalisé"
-}
-Utiliser un tableau :
+  ```bash
+    {
+      "to": "destinataire@exemple.com",
+      "subject": "E-mail de test",
+      "text": "Ceci est un e-mail test de NestJS !",
+      "fromName": "Mon expéditeur personnalisé"
+    }
 
-json
-Copier le code
-{
-  "à": ["utilisateur1@exemple.com", "utilisateur2@exemple.com", "utilisateur3@exemple.com"],
-  "subject": "E-mail de test",
-  "text": "Ceci est un email test envoyé à plusieurs destinataires !",
-  "fromName": "Mon expéditeur personnalisé"
-}
+  Exemple pour plusieurs destinataires :
+  ```bash
+  {
+    "to": "utilisateur1@exemple.com,utilisateur2@exemple.com",
+    "subject": "E-mail de test",
+    "text": "Ceci est un email test envoyé à plusieurs destinataires !",
+    "fromName": "Mon expéditeur personnalisé"
+  }
+
+ ou
+
+  {
+    "à": ["utilisateur1@exemple.com", "utilisateur2@exemple.com", "utilisateur3@exemple.com"],
+    "subject": "E-mail de test",
+    "text": "Ceci est un email test envoyé à plusieurs destinataires !",
+    "fromName": "Mon expéditeur personnalisé"
+  }
