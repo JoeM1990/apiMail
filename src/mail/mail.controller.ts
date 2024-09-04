@@ -15,4 +15,15 @@ export class MailController {
   ) {
     return this.mailService.sendMail(to, fromName, subject, text);
   }
+
+  @Post('multiple')
+  async sendEmailMultiple(
+    @Body('to') to: string[],
+    @Body('fromName') fromName: string,
+    @Body('subject') subject: string,
+    @Body('text') text: string,
+    
+  ) {
+    return this.mailService.sendMailMultiple(to, fromName, subject, text);
+  }
 }
