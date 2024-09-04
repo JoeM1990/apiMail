@@ -35,7 +35,7 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
     Créez un mot de passe d'application dans votre compte Google.
     Remplacez your-email@gmail.com et your-app-password dans EmailService par vos informations d'identification réelles.
 
-  ```bash
+  
   this.transporter = nodemailer.createTransport({
     service : 'gmail',
     authentification : {
