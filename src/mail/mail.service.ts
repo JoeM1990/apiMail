@@ -4,14 +4,15 @@ import * as nodemailer from 'nodemailer';
 
 @Injectable()
 export class EmailService {
+
   private transporter;
 
   constructor(private config:ConfigService) {
     this.transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: config.get('SMTP_SERVICE'),
       auth: {
         user: config.get('SMTP_USERNAME'), 
-        pass: 'your-email-password', 
+        pass: config.get('SMTP_PASSWORD'), 
       },
     });
   }
