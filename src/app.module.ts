@@ -10,8 +10,7 @@ import { EmailModule } from './email/email.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    AuthModule, 
-    EmailModule
+   
   ],
   controllers: [AppController],
   providers: [AppService],
