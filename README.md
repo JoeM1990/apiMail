@@ -30,8 +30,8 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
       this.transporter = nodemailer.createTransport({
         service : 'gmail',
         authentification : {
-          utilisateur : 'votre-email@gmail.com',
-          pass : « votre-mot de passe-de-l'application »,
+          utilisateur : 'your-email@gmail.com',
+          pass : 'your-app-password',
         },
       });
       ```
