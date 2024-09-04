@@ -25,3 +25,52 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
    ```bash
    clone git https://github.com/JoeM1990/apiMail.git
    cd apiMail
+2. Installez les dépendances :
+   npm install
+
+3. Configuration
+  Configurez vos identifiants Gmail :
+
+  Créez un mot de passe d'application dans votre compte Google.
+  Remplacez your-email@gmail.com et your-app-password dans EmailService par vos informations d'identification réelles.
+
+  this.transporter = nodemailer.createTransport({
+    service : 'gmail',
+    authentification : {
+      utilisateur : 'votre-email@gmail.com',
+      pass : « votre-mot de passe-de-l'application »,
+    },
+  });
+Usage
+Pour envoyer un e-mail, vous pouvez effectuer une requête POST à ​​http://localhost:3000/email/send avec le corps JSON suivant :
+
+Exemple pour un seul destinataire :
+json
+Copier le code
+{
+  "à": "destinataire@exemple.com",
+  "subject": "E-mail de test",
+  "text": "Ceci est un e-mail test de NestJS !",
+  "fromName": "Mon expéditeur personnalisé"
+}
+Exemple pour plusieurs destinataires :
+Utilisation d'une chaîne séparée par des virgules :
+
+json
+Copier le code
+{
+  "à": "utilisateur1@exemple.com,utilisateur2@exemple.com",
+  "subject": "E-mail de test",
+  "text": "Ceci est un email test envoyé à plusieurs destinataires !",
+  "fromName": "Mon expéditeur personnalisé"
+}
+Utiliser un tableau :
+
+json
+Copier le code
+{
+  "à": ["utilisateur1@exemple.com", "utilisateur2@exemple.com", "utilisateur3@exemple.com"],
+  "subject": "E-mail de test",
+  "text": "Ceci est un email test envoyé à plusieurs destinataires !",
+  "fromName": "Mon expéditeur personnalisé"
+}
