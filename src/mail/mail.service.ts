@@ -38,7 +38,7 @@ export class MailService {
   async sendMailMultiple(to: string[], fromName: string, subject: string, text: string, ) {
     const mailOptions = {
       from: `"${fromName}" "${this.config.get('SMTP_USERNAME')}"`,
-      to,
+      to: to.join(','),
       subject,
       text,
     };
