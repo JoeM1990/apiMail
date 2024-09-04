@@ -8,11 +8,11 @@ export class MailController {
   @Post('send')
   async sendEmail(
     @Body('to') to: string,
-    @Body('from') from: string,
+    @Body('fromName') fromName: string,
     @Body('subject') subject: string,
     @Body('text') text: string,
     
   ) {
-    return this.mailService.sendMail(to, from, subject, text);
+    return this.mailService.sendMail(to, fromName, subject, text);
   }
 }
