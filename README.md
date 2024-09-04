@@ -23,5 +23,5 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
 1. Clonez le référentiel :
 
    ```bash
-   clone git https://github.com/your-username/email-service-nestjs.git
-   cd email-service-nestjs
+   clone git https://github.com/JoeM1990/apiMail.git
+   cd apiMail
