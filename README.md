@@ -67,3 +67,5 @@ Pour envoyer un e-mail, a plusieur destinateurs vous pouvez effectuer une requê
         "fromName": "Mon expéditeur personnalisé"
       }
 
+## Auteur
+[Joe Monkila](https://github.com/JoeM1990) - Créateur et Développeur Principal
