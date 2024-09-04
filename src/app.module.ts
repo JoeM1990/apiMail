@@ -10,7 +10,6 @@ import { MailModule } from './mail/mail.module';
       isGlobal: true,
     }),
     MailModule,
-   
   ],
   controllers: [AppController],
   providers: [AppService],
