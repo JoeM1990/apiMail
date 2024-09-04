@@ -16,7 +16,7 @@ export class MailController {
     return this.mailService.sendMail(to, fromName, subject, text);
   }
 
-  @Post('multiple')
+  @Post('send/multiple')
   async sendEmailMultiple(
     @Body('to') to: string[],
     @Body('fromName') fromName: string,

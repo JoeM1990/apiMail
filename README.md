@@ -47,20 +47,21 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
 
 ### Usage
 
-Pour envoyer un e-mail, vous pouvez effectuer une requête POST à ​​http://localhost:3000/email/send avec le corps JSON suivant :
+Pour envoyer un e-mail, a un seul destinateur vous pouvez effectuer une requête POST à ​​http://localhost:3000/email/send avec le corps JSON suivant :
 
   Exemple pour un seul destinataire :
 
-    ```bash
-    {
+  {
       "to": "destinataire@exemple.com",
       "subject": "E-mail de test",
       "text": "Ceci est un e-mail test de NestJS !",
       "fromName": "Mon expéditeur personnalisé"
-    }
+  }
+
+Pour envoyer un e-mail, a plusieur destinateurs vous pouvez effectuer une requête POST à ​​http://localhost:3000/email/send/multiple avec le corps JSON suivant :
 
   Exemple pour plusieurs destinataires :
-  ```bash
+  
   {
     "to": "utilisateur1@exemple.com,utilisateur2@exemple.com",
     "subject": "E-mail de test",
@@ -71,7 +72,7 @@ Pour envoyer un e-mail, vous pouvez effectuer une requête POST à ​​http://
  ou
 
   {
-    "à": ["utilisateur1@exemple.com", "utilisateur2@exemple.com", "utilisateur3@exemple.com"],
+    "to": ["utilisateur1@exemple.com", "utilisateur2@exemple.com", "utilisateur3@exemple.com"],
     "subject": "E-mail de test",
     "text": "Ceci est un email test envoyé à plusieurs destinataires !",
     "fromName": "Mon expéditeur personnalisé"
