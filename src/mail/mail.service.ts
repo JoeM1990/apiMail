@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import * as nodemailer from 'nodemailer';
 
 @Injectable()
-export class EmailService {
+export class MailService {
 
   private transporter;
 
@@ -17,9 +17,9 @@ export class EmailService {
     });
   }
 
-  async sendMail(to: string, subject: string, text: string) {
+  async sendMail(to: string, subject: string, text: string, from: string) {
     const mailOptions = {
-      from: 'your-email@gmail.com',
+      from: from,
       to,
       subject,
       text,
