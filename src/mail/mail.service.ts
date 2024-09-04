@@ -34,4 +34,22 @@ export class MailService {
       throw error;
     }
   }
+
+  async sendMailMultiple(to: string[], fromName: string, subject: string, text: string, ) {
+    const mailOptions = {
+      from: `"${fromName}" "${this.config.get('SMTP_USERNAME')}"`,
+      to,
+      subject,
+      text,
+    };
+
+    try {
+      const result = await this.transporter.sendMail(mailOptions);
+      console.log(`Email sent: ${result.response}`);
+      return result;
+    } catch (error) {
+      console.error(`Error sending email: ${error}`);
+      throw error;
+    }
+  }
 }
