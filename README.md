@@ -30,10 +30,10 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
    npm install
 
 3. Configuration
-  Configurez vos identifiants Gmail :
+    Configurez vos identifiants Gmail :
 
-  Créez un mot de passe d'application dans votre compte Google.
-  Remplacez your-email@gmail.com et your-app-password dans EmailService par vos informations d'identification réelles.
+    Créez un mot de passe d'application dans votre compte Google.
+    Remplacez your-email@gmail.com et your-app-password dans EmailService par vos informations d'identification réelles.
 
   ```bash
   this.transporter = nodemailer.createTransport({
@@ -43,13 +43,15 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
       pass : « votre-mot de passe-de-l'application »,
     },
   });
+  
 
 ### Usage
+
 Pour envoyer un e-mail, vous pouvez effectuer une requête POST à ​​http://localhost:3000/email/send avec le corps JSON suivant :
 
   Exemple pour un seul destinataire :
 
-  ```bash
+    ```bash
     {
       "to": "destinataire@exemple.com",
       "subject": "E-mail de test",
