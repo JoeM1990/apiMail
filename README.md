@@ -30,10 +30,10 @@ Avant d'exécuter ce projet, assurez-vous que les éléments suivants sont insta
    npm install
 
 3. Configuration
-    Configurez vos identifiants Gmail :
+  Configurez vos identifiants Gmail :
 
-    Créez un mot de passe d'application dans votre compte Google.
-    Remplacez your-email@gmail.com et your-app-password dans EmailService par vos informations d'identification réelles.
+  Créez un mot de passe d'application dans votre compte Google.
+  Remplacez your-email@gmail.com et your-app-password dans EmailService par vos informations d'identification réelles.
 
   
   this.transporter = nodemailer.createTransport({
@@ -51,6 +51,7 @@ Pour envoyer un e-mail, a un seul destinateur vous pouvez effectuer une requête
 
   Exemple pour un seul destinataire :
 
+  
   {
       "to": "destinataire@exemple.com",
       "subject": "E-mail de test",
@@ -77,3 +78,4 @@ Pour envoyer un e-mail, a plusieur destinateurs vous pouvez effectuer une requê
     "text": "Ceci est un email test envoyé à plusieurs destinataires !",
     "fromName": "Mon expéditeur personnalisé"
   }
+
