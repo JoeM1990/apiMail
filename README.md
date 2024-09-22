@@ -67,6 +67,5 @@ Pour envoyer un e-mail, à plusieurs destinateurs vous pouvez effectuer une requ
         "fromName": "Mon expéditeur personnalisé"
       }
 
-
 ## Auteur
 [Joe Monkila](https://github.com/JoeM1990) - Créateur et Développeur Principal
