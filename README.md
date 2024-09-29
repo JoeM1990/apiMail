@@ -47,6 +47,7 @@ Pour envoyer un e-mail, à un seul destinateur vous pouvez effectuer une requêt
           "fromName": "Mon expéditeur personnalisé"
       }
 
+
 Pour envoyer un e-mail, à plusieurs destinateurs vous pouvez effectuer une requête POST à ​​http://localhost:3000/email/send/multiple avec le corps JSON suivant :
 
   Exemple pour plusieurs destinataires :
